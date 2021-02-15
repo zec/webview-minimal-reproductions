@@ -20,5 +20,15 @@ document.addEventListener(
   },
   true
 );
+
+window.onload = function() {
+  setTimeout(
+    function(){
+      console.log("window timeout ran!");
+      window.external.invoke("exit");
+    },
+    5000
+  );
+}
 </script>
 </html>
