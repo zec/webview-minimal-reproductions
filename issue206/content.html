@@ -21,14 +21,14 @@ document.addEventListener(
   true
 );
 
-window.onload = function() {
-  setTimeout(
-    function(){
-      console.log("window timeout ran!");
-      window.external.invoke("exit");
-    },
-    5000
-  );
+function sleep(ms) {
+  return new Promise(function(resolve) { setTimeout(resolve, ms); });
+}
+
+window.onload = async function() {
+  await sleep(5000);
+  console.log("exiting after timeout future");
+  window.external.invoke("exit");
 }
 </script>
 </html>
