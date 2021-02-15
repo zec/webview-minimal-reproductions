@@ -8,19 +8,15 @@
   <title>.</title>
 </head>
 <body>
-  <p><a href="#">exit me</a></p>
+  <p>exit me</p>
 </body>
 <script>
 document.addEventListener(
   'click',
   function(e) {
-    var t = e.target;
-    if (t instanceof Element && t.tagName.toLowerCase() === 'a') {
-        window.external.invoke("exit");
-        e.preventDefault();
-        return false;
-    }
-    return true;
+    window.external.invoke("exit");
+    e.preventDefault();
+    return false;
   },
   true
 );
