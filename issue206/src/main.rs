@@ -31,5 +31,8 @@ fn run_webview() -> WVResult<()> {
     wv.set_html(HTML_CONTENT)?;
     wv.run()?;
 
+    println!("Now sleeping after returning from wv.run()");
+    std::thread::sleep(std::time::Duration::from_millis(5000));
+
     Ok(())
 }
